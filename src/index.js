@@ -16,6 +16,8 @@ import createSagaMiddleware from 'redux-saga';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('GET_MOVIE', getPic);
+    yield takeEvery('GET_DETAILS', getDetails);
+
 }
 
 function* getPic(){
@@ -26,6 +28,17 @@ function* getPic(){
         console.log('error while getting elemnts', error);
     }
   }
+
+  function* getDetails(action) {
+    try {
+        let response = yield axios.get(`/film/${action.payload}`)
+        yield console.log(response);
+        yield put({type: 'SET_GENRES', payload: response.data})
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();

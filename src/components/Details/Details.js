@@ -16,12 +16,28 @@ class Details extends Component {
     }
 
     render() {
+        let movieTitle;
+        let moviePoster;
+        let movieDescription;
+
+        let filmInfo = this.props.reduxStore.genres.map((movie, index) => {
+            if( index === 0) {
+                movieTitle = <h1>{movie.title}</h1>;
+                moviePoster = <img src={movie.poster} />;
+                movieDescription = <p>{movie.description}</p>;
+            }
+            return (<ul key = {index}><li>{movie.name}</li></ul>)
+        })
         return (
-            <>
+            <div>
                 <button  onClick = {this.backBtn}>Back</button>
                 <button  onClick = {this.EditBtn}>Edit</button>
-            </>
-        )
+                {movieTitle}
+                {moviePoster}
+                {movieDescription}
+                {filmInfo}
+            </div>
+        );
     }
 }
 const mapStateToProps = reduxStore => {
