@@ -10,7 +10,7 @@ class Movie extends Component {
 
     movieDetails(id) {
         console.log('btn pic getting click')
-        this.props.history.push('/Details')
+        this.props.history.push(`/Details/:${id}`)
         console.log(id);
         this.props.dispatch({ type: 'GET_DETAILS', payload: id });
     }

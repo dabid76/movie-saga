@@ -32,12 +32,10 @@ class Details extends Component {
             <div>
                 <button  onClick = {this.backBtn}>Back</button>
                 <button  onClick = {this.EditBtn}>Edit</button>
-            <div className="movieList">
                 {movieTitle}
                 {moviePoster}
                 {movieDescription}
                 {filmInfo}
-            </div>
             </div>
         );
     }

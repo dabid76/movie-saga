@@ -17,15 +17,24 @@ import createSagaMiddleware from 'redux-saga';
 function* rootSaga() {
     yield takeEvery('GET_MOVIE', getPic);
     yield takeEvery('GET_DETAILS', getDetails);
-
+    yield takeEvery('NEW_INFO', newIfno);
 }
+
+function* newIfno(action){
+    try{
+      yield axios.put('/movies', action.payload);
+      yield put({type: 'GET_MOVIE'})
+    }catch(error){
+      console.log('error updating new info', error);
+    }
+  }
 
 function* getPic(){
     try {
         const response = yield axios.get('/movies');
         yield put({ type: 'SET_MOVIES', payload: response.data });
     } catch(error) {
-        console.log('error while getting elemnts', error);
+        console.log('error while getting movies', error);
     }
   }
 
