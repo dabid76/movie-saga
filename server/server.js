@@ -8,7 +8,11 @@ app.use(bodyParser.json()); // needed for angular requests
 app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
+const moviesRouter = require('./Routes/moviesRouter')
+// const movieFinder = require('./Routes/movieFinder')
 
+app.use('/movies', moviesRouter)
+// app.use('/film', movieFinder)
 
 /** ---------- START SERVER ---------- **/
 app.listen(port, function () {
