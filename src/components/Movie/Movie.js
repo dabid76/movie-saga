@@ -11,16 +11,18 @@ class Movie extends Component {
     movieDetails(id) {
         console.log('btn pic getting click')
         this.props.history.push('/Details')
-        this.props.dispatch({ type: 'GET_DETAILS', payload: id });
         console.log(id);
+        this.props.dispatch({ type: 'GET_DETAILS', payload: id });
     }
 
     render() {
-        let films = this.props.reduxStore.movies.map((movie, index) => {
-            return (<div key={index} onClick={() => this.movieDetails(movie.id)}>
-                <h1>{movie.title}</h1>
-                <img src={movie.poster} />
-                <p>{movie.description}</p></div>)
+        let films = this.props.reduxStore.movies.map((movie, id) => {
+            return (
+            <div className="movieList" key={movie.id} >
+                <h1 key={id}>{movie.title}</h1>
+                <img src={movie.poster} onClick={() => this.movieDetails(movie.id)}/>
+                <p className="movieDescription">{movie.description}</p>
+            </div>)
         })
         return (
             <div>
