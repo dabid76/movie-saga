@@ -22,6 +22,33 @@
   to { transform: rotate(360deg); }
 }
 
-/* .movieList {
+.description {
+  text-align: center;
+}
+
+/* * {box-sizing: border-box;} */
+.movieList {
+  max-width: 940px;
+  margin: left;
+}
+
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.title {
+  grid-column: 2 ;
+  grid-row: 1 ;
   text-align: left;
-} */
+}
+
+.route-wrapper {
+  position: relative;
+}
+
+.route-wrapper > div {
+  position: absolute;
+}

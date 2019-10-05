@@ -19,9 +19,13 @@ class Movie extends Component {
         let films = this.props.reduxStore.movies.map((movie, id) => {
             return (
             <div className="movieList" key={movie.id} >
-                <h1 key={id}>{movie.title}</h1>
-                <img src={movie.poster} onClick={() => this.movieDetails(movie.id)}/>
-                <p className="movieDescription">{movie.description}</p>
+                <div className="title">
+                    <h1 key={id}>{movie.title}</h1>
+                </div>
+                <div className="movie">
+                    <img src={movie.poster} onClick={() => this.movieDetails(movie.id)}/>
+                </div>
+                {/* <p className="movieDescription">{movie.description}</p> */}
             </div>)
         })
         return (

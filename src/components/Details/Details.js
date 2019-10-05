@@ -4,15 +4,27 @@ import { connect } from 'react-redux';
 
 class Details extends Component {
 
+    // state = {
+    //     movie: []
+    // }
+
+    // componentDidMount() {
+    //     this.ID()
+    // }
+    // ID = (id) => {
+    //     console.log(this.props.match.params.id)
+    //     this.props.dispatch({ type: 'GET_DETAILS', payload: id })
+    // }
+
     backBtn = () => {
         console.log('back btn click')
         this.props.history.push('/')
 
     }
     
-    EditBtn = () => {
+    editBtn = (id) => {
         console.log('edit btn click')
-        this.props.history.push('/Edit')
+        this.props.history.push(`/Edit/${this.props.match.params.id}`)
     }
 
     render() {
@@ -20,18 +32,18 @@ class Details extends Component {
         let moviePoster;
         let movieDescription;
 
-        let filmInfo = this.props.reduxStore.genres.map((movie, index) => {
-            if( index === 0) {
-                movieTitle = <h1>{movie.title}</h1>;
+        let filmInfo = this.props.reduxStore.genres.map((movie, id) => {
+            if( id === 0) {
+                movieTitle = <h1 key={id}>{movie.title}</h1>;
                 moviePoster = <img src={movie.poster} />;
                 movieDescription = <p>{movie.description}</p>;
             }
-            return (<ul key = {index}><li>{movie.name}</li></ul>)
+            return (<ul key = {movie.id}><li>{movie.name}</li></ul>)
         })
         return (
-            <div>
+            <div className="description">
                 <button  onClick = {this.backBtn}>Back</button>
-                <button  onClick = {this.EditBtn}>Edit</button>
+                <button  onClick = {this.editBtn}>Edit</button>
                 {movieTitle}
                 {moviePoster}
                 {movieDescription}
