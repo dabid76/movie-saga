@@ -23,7 +23,8 @@ function* rootSaga() {
 function* newIfno(action){
     try{
       yield axios.put('/movies', action.payload);
-      yield put({type: 'GET_MOVIE'})
+      console.log('PUT REQ:', action.payload)
+    //   yield put({type: 'GET_MOVIE'})
     }catch(error){
       console.log('error updating new info', error);
     }

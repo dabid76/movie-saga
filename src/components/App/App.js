@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import Movie from '../Movie/Movie'
+import MovieList from '../MovieList/MovieList'
 import Details from '../Details/Details'
 import Edit from '../Edit/Edit'
 import { spring, AnimatedSwitch } from 'react-router-transition';
@@ -61,7 +61,7 @@ class App extends Component {
   >
       {/* <div className="App"> */}
         {/* <Router> */}
-        <Route exact path ='/' component={Movie}/>
+        <Route exact path ='/' component={MovieList}/>
         <Route path = '/Details/:id' component={Details}/>
         <Route path ='/Edit/:id' component={Edit}/>
         {/* </Router> */}

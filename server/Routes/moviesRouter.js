@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    pool.query('SELECT * FROM "movies";')
+    pool.query('SELECT * FROM "movies" ORDER BY "id" ASC;')
         .then((result) => {
         res.send(result.rows);
     }).catch((error) => {
@@ -21,7 +21,7 @@ router.put('/', (req, res) => {
     let updateMovie = req.body;
     console.log(updateMovie);
     let queryText =
-        `UPDATE "movies" SET "title" = $1, "description" = $2 WHERE "id" = $3`;
+        `UPDATE "movies" SET "title" = $1, "description" = $2 WHERE id = $3`;
     pool.query(queryText, [updateMovie.title, updateMovie.description, updateMovie.id])
         .then(results => {
             res.sendStatus(200);

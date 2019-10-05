@@ -32,7 +32,7 @@ class Edit extends Component {
 
     cancelBtn = (id) => {
         console.log('cancel btn click')
-        this.props.history.push(`/Details/:${this.state.editInfo.id}`)
+        this.props.history.push(`/Details/${this.props.match.params.id}`)
     }
 
     saveBtn = (id) => {
@@ -40,6 +40,7 @@ class Edit extends Component {
         this.props.dispatch({type:'NEW_INFO', payload: this.state.editInfo})
         console.log(this.state);
         this.props.history.push(`/`);
+        // this.cancelBtn();
     }
 
     // titleChange = (event) => {
@@ -58,6 +59,7 @@ class Edit extends Component {
             }
           })
         console.log('in handleChange')
+        // this.cancelBtn();
     }
 
     // descriptionChange = (event) => {
@@ -69,14 +71,8 @@ class Edit extends Component {
     // }
 
     render() {
-        // let filmsInfo = this.props.reduxStore.genres.map((movie, id) => {
             return (
-            //     <div>
-            // <button key = {index} onClick={() => this.saveBtn(movie.movie_id)}>Save</button>
-            //     </div>
-            // )
-        // })
-        // return (
+ 
             <div>
                 <button  onClick = {this.cancelBtn}>Cancel</button>
                 <button  onClick = {this.saveBtn}>Save</button>
@@ -89,11 +85,7 @@ class Edit extends Component {
                 <p>Description</p>
                 <textarea placeholder="Description" value={this.state.editInfo.description} onChange = {(event) => this.handleChange(event, 'description')} rows="4" cols="50"></textarea>
             </div>
-            // )})
-                // return (
-            // <div>
-            //     {filmsInfo}
-            // </div>
+ 
         )
     }
 }
