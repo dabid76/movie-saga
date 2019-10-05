@@ -23,12 +23,12 @@ class MovieList extends Component {
  
 
             <div className="movieList" key={movie.id} >
-                <div className="title">
+                {/* <div> */}
                     <h1 key={id}>{movie.title}</h1>
-                </div>
-                <div className="movie">
+                {/* </div> */}
+                {/* <div className="movie"> */}
                     <img src={movie.poster} alt={movie.poster} onClick={() => this.movieDetails(movie.id)}/>
-                </div>
+                {/* </div> */}
                 {/* <p className="movieDescription">{movie.description}</p> */}
             </div>)
         })

@@ -9,7 +9,7 @@ class Edit extends Component {
                 id: '',
                 title: '',
                 description: '',
-                // poster: '',
+                genres: '',
             }
         }
 
@@ -24,7 +24,7 @@ class Edit extends Component {
                     id: movieInfo.id,
                     title: movieInfo.title,
                     description: movieInfo.description,
-                    // poster: movieInfo.poster,
+                    genres: movieInfo.genres,
                 }
             })
         })}
@@ -73,7 +73,7 @@ class Edit extends Component {
     render() {
             return (
  
-            <div>
+            <div className="editBox">
                 <button  onClick = {this.cancelBtn}>Cancel</button>
                 <button  onClick = {this.saveBtn}>Save</button>
                 {/* <button onClick={() => this.saveBtn(movie.movie_id)}>Save</button> */}
@@ -81,6 +81,9 @@ class Edit extends Component {
                 <br/>
                 <p>Title</p>
                 <input placeholder="Title" type='text' value={this.state.editInfo.title} onChange = {(event) => this.handleChange(event, 'title')}  />
+                <br/>
+                <p>Genres</p>
+                <input placeholder="Genres" type='text' value={this.state.editInfo.genres} onChange = {(event) => this.handleChange(event, 'genres')}  />
                 <br/>
                 <p>Description</p>
                 <textarea placeholder="Description" value={this.state.editInfo.description} onChange = {(event) => this.handleChange(event, 'description')} rows="4" cols="50"></textarea>

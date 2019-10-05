@@ -23,26 +23,42 @@
 }
 
 .description {
+  display: grid;
   text-align: center;
+  /* grid-template-columns: 100px 100px 100px; */
+  /* grid-gap: 10px; */
+  background-color: #607D8B;
+  color: black;
+  border-width:25px;  
+  border-style:outset;
+  display:block;
 }
 
-/* * {box-sizing: border-box;} */
-.movieList {
-  max-width: 940px;
-  margin: left;
+.editBox {
+  display: grid;
+  text-align: center;
+  /* grid-template-columns: 100px 100px 100px; */
+  /* grid-gap: 10px; */
+  background-color: #607D8B;
+  color: black;
+  border-width:25px;  
+  border-style:outset;
+  display:block;
+  /* display: inline-grid; */
+
 }
 
 .movieList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-}
-
-.title {
-  grid-column: 2 ;
-  grid-row: 1 ;
-  text-align: left;
+  /* grid-template-columns: 100px 100px 100px; */
+  /* grid-gap: 92px; */
+  background-color: #607D8B;
+  color: black;
+  border-width: 25px;
+  border-style: outset;
+  /* display: block; */
+  display: inline-grid;
+  /* display: inline-grid; */
 }
 
 .route-wrapper {
@@ -52,3 +68,9 @@
 .route-wrapper > div {
   position: absolute;
 }
+
+  img {
+    border-radius: 10%;
+    border-width:5px;  
+    border-style: solid
+  }

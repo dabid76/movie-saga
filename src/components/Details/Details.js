@@ -36,10 +36,10 @@ class Details extends Component {
         let filmInfo = this.props.reduxStore.genres.map((movie, id) => {
             if( id === 0) {
                 movieTitle = <h1 key={id}>{movie.title}</h1>;
-                moviePoster = <img alt="" src={movie.poster} />;
+                moviePoster = <img alt={movie.poster} src={movie.poster} />;
                 movieDescription = <p>{movie.description}</p>;
             }
-            return (<ul key = {movie.id}><li>{movie.name}</li></ul>)
+            return (<ul key={movie.id}><li><span>{movie.name}</span></li></ul>)
         })
         return (
             <div className="description">
