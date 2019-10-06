@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from "@material-ui/core/Button";
+
 
 class Details extends Component {
 
@@ -39,8 +41,20 @@ class Details extends Component {
         }) // end map
         return (
             <div className="description">
-                <button  onClick = {this.backBtn}>Back to Movies</button>
-                <button  onClick = {this.editBtn}>Edit</button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={this.backBtn}
+            >
+              Back to List
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={this.editBtn}
+            >
+              Edit
+            </Button>
                 {movieTitle}
                 {moviePoster}
                 {movieDescription}

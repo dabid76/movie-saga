@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Grid from "@material-ui/core/Grid";
+
 
 class MovieList extends Component {
 
@@ -13,9 +15,11 @@ class MovieList extends Component {
     } // end movieDetails
 
     render() {
+
         let films = this.props.reduxStore.movies.map((movie, id) => {
 
             return (
+                
             <div className="movieList" key={movie.id} >
                     <h1 key={id}>{movie.title}</h1>
                     <img src={movie.poster} alt={movie.poster} onClick={() => this.movieDetails(movie.id)}/>
@@ -23,7 +27,9 @@ class MovieList extends Component {
         }) // end map
         return (
             <div>
-                {films}
+                <Grid container spacing={16}>
+                    {films}
+                </Grid>
             </div>
         ) // end return
     } // end render

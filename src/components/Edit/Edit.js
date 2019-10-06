@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import Button from "@material-ui/core/Button";
 import { connect } from 'react-redux';
 
 class Edit extends Component {
@@ -28,9 +28,9 @@ class Edit extends Component {
         })} // end map
     } // end infoDetails
 
-    canleBtn = (id) => {
+    cancelBtn = (id) => {
         this.props.history.push(`/Details/${this.props.match.params.id}`)
-    } // end cancleBtn
+    } // end cancelBtn
 
     saveBtn = (id) => {
         this.props.dispatch({type:'NEW_INFO', payload: this.state.editInfo})
@@ -51,8 +51,22 @@ class Edit extends Component {
             return (
  
             <div className="editBox">
-                <button  onClick = {this.canleBtn}>Canle</button>
-                <button  onClick = {this.saveBtn}>Save</button>
+        <div>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.cancelBtn}
+          >
+            Cancel
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.saveBtn}
+          >
+            Save
+          </Button>
+        </div>
                 <br/>
                 <br/>
                 <p>Title</p>
