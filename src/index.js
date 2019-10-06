@@ -23,7 +23,6 @@ function* rootSaga() {
 function* newIfno(action){
     try{
       yield axios.put('/movies', action.payload);
-      console.log('PUT REQ:', action.payload)
     }catch(error){
       console.log('error updating new info', error);
     } // end try
@@ -41,10 +40,9 @@ function* getPic(){
   function* getDetails(action) {
     try {
         let response = yield axios.get(`/film/${action.payload}`)
-        yield console.log(response);
         yield put({type: 'SET_GENRES', payload: response.data})
     } catch (error) {
-        console.log(error); 
+        console.log('error with getting the details', error); 
     } // end try
 } // end getDetails saga
 
