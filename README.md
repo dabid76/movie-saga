@@ -5,6 +5,7 @@ This application displays a list of movies from our database. Users have the abi
 Duration: 3 days.
 
 I had a couple problems with this project mainly getting it talking with the database, and making the details and title show up in the edit page. I solve this problem by console logging every time it had to talk to the datebase and checking everything carefully, solving the other problem had to do with how I was making the saga's talk to the database.
+To see the fully functional site, please visit: https://movie-list-01.herokuapp.com/#/
 
 ## Installation
 1. Create a database see "data.sql" 
