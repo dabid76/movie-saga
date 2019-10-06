@@ -50,6 +50,8 @@
   color: black;
   border-width: 25px;
   border-style: outset;
+  float: left;
+  margin-right: 20px;
 }
 
 .route-wrapper {

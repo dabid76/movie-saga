@@ -5,6 +5,10 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^4.4.3",
+    "@material/menu": "^3.2.0",
+    "@material/react-menu": "^0.15.0",
+    "@material/top-app-bar": "^3.2.0",
     "axios": "^0.18.0",
     "pg": "^7.11.0",
     "react": "^16.8.6",
