@@ -24,7 +24,7 @@ class Edit extends Component {
                     id: movieInfo.id,
                     title: movieInfo.title,
                     description: movieInfo.description,
-                    genres: movieInfo.genres,
+                    // genres: movieInfo.name,
                 }
             })
         })}
@@ -82,9 +82,9 @@ class Edit extends Component {
                 <p>Title</p>
                 <input placeholder="Title" type='text' value={this.state.editInfo.title} onChange = {(event) => this.handleChange(event, 'title')}  />
                 <br/>
-                <p>Genres</p>
+                {/* <p>Genres</p>
                 <input placeholder="Genres" type='text' value={this.state.editInfo.genres} onChange = {(event) => this.handleChange(event, 'genres')}  />
-                <br/>
+                <br/> */}
                 <p>Description</p>
                 <textarea placeholder="Description" value={this.state.editInfo.description} onChange = {(event) => this.handleChange(event, 'description')} rows="4" cols="50"></textarea>
             </div>

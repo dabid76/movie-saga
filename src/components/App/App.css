@@ -25,8 +25,6 @@
 .description {
   display: grid;
   text-align: center;
-  /* grid-template-columns: 100px 100px 100px; */
-  /* grid-gap: 10px; */
   background-color: #607D8B;
   color: black;
   border-width:25px;  
@@ -37,28 +35,21 @@
 .editBox {
   display: grid;
   text-align: center;
-  /* grid-template-columns: 100px 100px 100px; */
-  /* grid-gap: 10px; */
   background-color: #607D8B;
   color: black;
   border-width:25px;  
   border-style:outset;
   display:block;
-  /* display: inline-grid; */
-
 }
 
 .movieList {
   display: grid;
-  /* grid-template-columns: 100px 100px 100px; */
-  /* grid-gap: 92px; */
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 92px;
   background-color: #607D8B;
   color: black;
   border-width: 25px;
   border-style: outset;
-  /* display: block; */
-  display: inline-grid;
-  /* display: inline-grid; */
 }
 
 .route-wrapper {
@@ -69,8 +60,12 @@
   position: absolute;
 }
 
-  img {
-    border-radius: 10%;
-    border-width:5px;  
-    border-style: solid
-  }
+img {
+  border-radius: 10%;
+  border-width:5px;  
+  border-style: solid;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
