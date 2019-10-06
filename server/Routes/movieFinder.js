@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+// GET
 router.get('/:id', (req, res) => {
     let movieId = req.params.id;
     console.log('/film/' + movieId);
@@ -22,7 +23,6 @@ router.get('/:id', (req, res) => {
             console.log(error);
             res.sendStatus(500);
         })
-});
-
+}); // end router.GET
 
 module.exports = router

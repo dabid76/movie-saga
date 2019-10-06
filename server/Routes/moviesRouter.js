@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const router = express.Router();
 
-
+// GET
 router.get('/', (req, res) => {
     pool.query('SELECT * FROM "movies" ORDER BY "id" ASC;')
         .then((result) => {
@@ -13,10 +13,9 @@ router.get('/', (req, res) => {
         console.log('Error', error)
         res.sendStatus(500);
     });
+}); // end router.GET
 
-});
-
-
+// PUT
 router.put('/', (req, res) => {
     let updateMovie = req.body;
     console.log(updateMovie);
@@ -31,7 +30,7 @@ router.put('/', (req, res) => {
             console.log(error);
             res.sendStatus(500);
         })
-});
+}); // end router.PUT
 
 
 module.exports = router

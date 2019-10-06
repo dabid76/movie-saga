@@ -9,12 +9,12 @@ class Edit extends Component {
                 id: '',
                 title: '',
                 description: '',
-            }
-        }
+            } // end editInfo
+        } // end state
 
     componentDidMount() {
         this.infoDetails();
-    }
+    } // end componentDidMount
 
     infoDetails = () => {
         {this.props.reduxStore.genres.map((movieInfo) => {
@@ -23,38 +23,38 @@ class Edit extends Component {
                     id: movieInfo.id,
                     title: movieInfo.title,
                     description: movieInfo.description,
-                }
-            })
-        })}
-    }
+                } // end editInfo
+            }) // end setState
+        })} // end map
+    } // end infoDetails
 
-    cancelBtn = (id) => {
+    canleBtn = (id) => {
         console.log('cancel btn click')
         this.props.history.push(`/Details/${this.props.match.params.id}`)
-    }
+    } // end cancleBtn
 
     saveBtn = (id) => {
         console.log('save btn click')
         this.props.dispatch({type:'NEW_INFO', payload: this.state.editInfo})
         console.log(this.state);
         this.props.history.push(`/`);
-    }
+    } // end saveBtn
 
     handleChange = (event, propertyName) => {
         this.setState({
             editInfo: {
               ...this.state.editInfo,
              [propertyName]: event.target.value,
-            }
-          })
+            } // end editInfo
+        }) // end setState
         console.log('in handleChange')
-    }
+    } // end handleChange
 
     render() {
             return (
  
             <div className="editBox">
-                <button  onClick = {this.cancelBtn}>Cancel</button>
+                <button  onClick = {this.canleBtn}>Canle</button>
                 <button  onClick = {this.saveBtn}>Save</button>
                 <br/>
                 <br/>
@@ -64,13 +64,13 @@ class Edit extends Component {
                 <p>Description</p>
                 <textarea placeholder="Description" value={this.state.editInfo.description} onChange = {(event) => this.handleChange(event, 'description')} rows="4" cols="50"></textarea>
             </div>
-        )
-    }
-}
+        ) // end return
+    } // end render
+} // end Edit component
 const mapStateToProps = reduxStore => {
     return {
         reduxStore
-    };
-};
+    }; // end return
+}; // end mapStateToProps
 
 export default connect(mapStateToProps)(Edit);

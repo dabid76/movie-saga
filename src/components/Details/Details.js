@@ -5,26 +5,26 @@ class Details extends Component {
 
     state = {
         movie: []
-    }
+    } // end state
 
     componentDidMount() {
         this.ID()
-    }
+    } // end componentDidMount
 
     ID = (id) => {
         console.log(this.props.match.params.id)
         this.props.dispatch({ type: 'GET_DETAILS', payload: this.props.match.params.id  })
-    }
+    } // end ID
 
     backBtn = () => {
         console.log('back btn click')
         this.props.history.push('/')
-    }
+    } // end backBtn
     
     editBtn = (id) => {
         console.log('edit btn click')
         this.props.history.push(`/Edit/${this.props.match.params.id}`)
-    }
+    } // end editBtn
 
     render() {
 
@@ -39,7 +39,7 @@ class Details extends Component {
                 movieDescription = <p>{movie.description}</p>;
             }
             return (<ul key={movie.id}><li><span>{movie.name}</span></li></ul>)
-        })
+        }) // end map
         return (
             <div className="description">
                 <button  onClick = {this.backBtn}>Back to Movies</button>
@@ -49,13 +49,13 @@ class Details extends Component {
                 {movieDescription}
                 {filmInfo}
             </div>
-        );
-    }
-}
+        ); // end return
+    } // end render
+} // end Details component
 const mapStateToProps = reduxStore => {
     return {
         reduxStore
-    };
-};
+    }; // end return
+}; // end mapStateToProps
 
 export default connect(mapStateToProps)(Details);
