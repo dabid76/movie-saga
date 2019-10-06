@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
 class Details extends Component {
 
     state = {
@@ -11,6 +10,7 @@ class Details extends Component {
     componentDidMount() {
         this.ID()
     }
+
     ID = (id) => {
         console.log(this.props.match.params.id)
         this.props.dispatch({ type: 'GET_DETAILS', payload: this.props.match.params.id  })
@@ -19,7 +19,6 @@ class Details extends Component {
     backBtn = () => {
         console.log('back btn click')
         this.props.history.push('/')
-
     }
     
     editBtn = (id) => {

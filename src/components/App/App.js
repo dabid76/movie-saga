@@ -39,13 +39,7 @@ const bounceTransition = {
   },
 }
 
-
-
 class App extends Component {
-
-
-
-
 
   // Renders the entire app on the DOM
   render() {
@@ -59,16 +53,11 @@ class App extends Component {
     mapStyles={mapStyles}
     className="route-wrapper"
   >
-      {/* <div className="App"> */}
-        {/* <Router> */}
         <Route exact path ='/' component={MovieList}/>
         <Route path = '/Details/:id' component={Details}/>
         <Route path ='/Edit/:id' component={Edit}/>
-        {/* </Router> */}
-      {/* </div> */}
       </AnimatedSwitch>
       </Router>
-
     );
   }
 }

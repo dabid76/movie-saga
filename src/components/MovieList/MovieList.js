@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class MovieList extends Component {
 
-
     componentDidMount() {
         this.props.dispatch({type: 'GET_MOVIE'})
     }
@@ -19,13 +18,9 @@ class MovieList extends Component {
         let films = this.props.reduxStore.movies.map((movie, id) => {
 
             return (
-
- 
-
             <div className="movieList" key={movie.id} >
                     <h1 key={id}>{movie.title}</h1>
                     <img src={movie.poster} alt={movie.poster} onClick={() => this.movieDetails(movie.id)}/>
-                {/* <p className="movieDescription">{movie.description}</p> */}
             </div>)
         })
         return (
