@@ -7,10 +7,10 @@ Duration: 3 days.
 I had a couple problems with this project mainly getting it talking with the database, and making the details and title show up in the edit page. I solve this problem by console logging every time it had to talk to the datebase and checking everything carefully, solving the other problem had to do with how I was making the saga's talk to the database.
 
 ## Installation
-1: Create a database see "data.sql" 
-2: Open up your editor of choice and run an npm install 
-3: Run npm run server in your terminal 
-4: Run npm run client in your terminal 
+1: Create a database see "data.sql"
+2: Open up your editor of choice and run an npm install
+3: Run npm run server in your terminal
+4: Run npm run client in your terminal
 5: The npm run client command will open up a new browser tab for you!
 
 ## Usage
