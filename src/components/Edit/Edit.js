@@ -29,14 +29,11 @@ class Edit extends Component {
     } // end infoDetails
 
     canleBtn = (id) => {
-        console.log('cancel btn click')
         this.props.history.push(`/Details/${this.props.match.params.id}`)
     } // end cancleBtn
 
     saveBtn = (id) => {
-        console.log('save btn click')
         this.props.dispatch({type:'NEW_INFO', payload: this.state.editInfo})
-        console.log(this.state);
         this.props.history.push(`/`);
     } // end saveBtn
 

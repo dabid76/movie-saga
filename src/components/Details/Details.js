@@ -12,17 +12,14 @@ class Details extends Component {
     } // end componentDidMount
 
     ID = (id) => {
-        console.log(this.props.match.params.id)
         this.props.dispatch({ type: 'GET_DETAILS', payload: this.props.match.params.id  })
     } // end ID
 
     backBtn = () => {
-        console.log('back btn click')
         this.props.history.push('/')
     } // end backBtn
     
     editBtn = (id) => {
-        console.log('edit btn click')
         this.props.history.push(`/Edit/${this.props.match.params.id}`)
     } // end editBtn
 

@@ -8,9 +8,7 @@ class MovieList extends Component {
     } // end componentDidMount
 
     movieDetails(id) {
-        console.log('btn pic getting click')
         this.props.history.push(`/Details/${id}`)
-        console.log(id);
         this.props.dispatch({ type: 'GET_DETAILS', payload: id });
     } // end movieDetails
 
