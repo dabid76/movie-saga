@@ -21,6 +21,9 @@ I had a couple problems with this project mainly getting it talking with the dat
 5: If choice to cancel it will take you back to the movie with the description
 6: If choice was to save the edited it will save the edits and it will take you back to the movie list
 
+## Built With
+React, Redux, Express, and PostgreSQL (a full list of dependencies can be found in package.json)
+
 ## Acknowledgement
 Thanks to Prime Digital Academy in Minneapolis who equipped and helped me to make this application a reality.
 
