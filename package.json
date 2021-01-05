@@ -9,7 +9,7 @@
     "@material/menu": "^3.2.0",
     "@material/react-menu": "^0.15.0",
     "@material/top-app-bar": "^3.2.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "pg": "^7.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
